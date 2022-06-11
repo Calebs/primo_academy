@@ -1,0 +1,219 @@
+.media_item {
+    @include flexbox();
+    overflow: hidden;
+}
+
+.media_figure {
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 20px;
+
+    @include MQ-MAX(M) {
+        margin-right: 15px;
+    }
+}
+
+.media_info {
+    flex: 1;
+}
+
+.iconBox {
+    height: 32px;
+    width: 32px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    font-size: 1em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    place-content: center;
+    background-color: $color_white;
+    fill: $brand_primary;
+
+    @include MQ(M) {
+        width: 48px;
+        height: 48px;
+    }
+
+    @include MQ-MAX(M) {
+        .cust_icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.avi_avg {
+    height: 32px;
+    width: 32px;
+}
+
+.avi_sm {
+    height: 24px;
+    width: 24px;
+    font-size: 14px;
+}
+
+.avi_md {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+} 
+
+.avi_lg {
+    width: 64px;
+    height: 64px;
+    font-size: 21px;
+} 
+
+.avi_large {
+    width: 64px;
+    height: 64px;
+    font-size: 21px;
+
+    @include MQ(M) {
+        width: 128px;
+        height: 128px;
+        font-size: 48px;
+    }
+}
+
+.productSummary {
+    @include flexbox();
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    
+    @include MQ(M) {
+        justify-content: space-around;
+    }
+}
+
+.summaryInfoItem {
+    padding: 10px;
+}
+
+.titleListItem {
+    @include flexbox();
+    align-items: center;
+
+    &::before {
+        height: 20px;
+        width: 20px;
+        display: inline-flex;
+        content: "";
+        margin-right: 10px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../img/icons/listmarker.svg);
+    }
+
+    > span {
+        flex-grow: 1;
+        width: 100%;
+    }
+    
+    + .titleListItem {
+        margin-top: 10px;
+    }
+}
+
+// form progress widget
+
+.formStepsWidget {
+    @include flexbox();
+    width: 100%;
+    flex-direction: column;
+}
+
+.formStepIndicatorItem {
+    @include flexbox();
+    position: relative;
+    color: $color_text_darker;
+    flex-direction: row;
+
+    + .formStepIndicatorItem {
+        margin-top: 40px;
+    }
+
+    &:last-child {
+        .stepIndicatorNode::after {
+            display: none;
+        }
+    }
+}
+
+.stepIndicatorNode {
+    font-weight: 900;
+    text-align: center;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    color: $brand_black;
+    display: inline-flex;
+    font-size: 21px;
+    align-items: center;
+    justify-content: center;
+    background-color: $border_grey_light;
+    margin-right: 20px;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 90px;
+        bottom: -90px;
+        @include center(x);
+        border-left: 2px solid $border_grey_light;
+        
+        @include MQ-MAX(M) {
+            display: none;
+        }
+    }
+
+}
+
+.stepIndicatorDetails {
+    flex: 1;
+    position: relative;
+    font-size: 14px;
+}
+
+.helpArticle {
+    display: block;
+    clear: both;
+    padding: 10px 15px;
+    background-color: $color_white;
+    border-radius: 15px;
+
+    + .helpArticle {
+        margin-top: 15px;
+    }
+
+    .title {
+        margin-bottom: 10px;
+    }
+
+    @include MQ(M) {
+        padding: 30px;
+    }
+}
+
+.contactInfoList {
+    margin: 0 -15px;
+    @include flexbox();
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $border_grey;
+}
+
+.contact_detail {
+    padding: 15px;
+}

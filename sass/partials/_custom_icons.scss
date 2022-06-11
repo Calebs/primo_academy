@@ -1,0 +1,72 @@
+/* SVG Icon systems */
+.cust_icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  vertical-align: middle;
+  fill: inherit;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+svg {
+    display: inline-block;
+    width: 100%;
+}
+
+.icon_xs {
+  width: 16px;
+  height: 16px;
+}
+
+.icon_sm {
+  width: 32px;
+  height: 32px;
+}
+
+.icon_md {
+  width: 24px;
+  height: 24px;
+
+  @include MQ(M) {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.icon_lg {
+  width: 64px;
+  height: 64px;
+}
+
+.icon_xl {
+    width: 64px;
+    height: 64px;
+
+    @include MQ(M) {
+      width: 128px;
+      height: 128px;
+    }
+}
+
+.icon_ticket {
+  background-image: url(../img/icons/ticket.svg); 
+}
+
+.icon_calendar {
+  background-image: url(../img/icons/calendar.svg); 
+}
+
+.icon_timer {
+  background-image: url(../img/icons/timer.svg); 
+}
+
+.icon_venue {
+  background-image: url(../img/icons/GlobeSimple.svg); 
+}
+
+.icon_gift {
+  background-image: url(../img/icons/gift.svg); 
+}

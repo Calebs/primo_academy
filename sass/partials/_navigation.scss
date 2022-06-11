@@ -1,0 +1,201 @@
+a {
+    text-decoration: none;
+    @include transition(all .6s ease-in-out);
+    color: inherit;
+    
+    &:hover,
+    &:focus {
+        color: $brand_primary;
+        text-decoration: none;
+    }
+    
+    &:focus {
+        outline: thin dotted $brand_primary;
+        .no-touch & {
+            outline: none;
+        }
+    }
+}
+
+a:link,
+button {
+    -webkit-tap-highlight-color: rgba($brand_primary, .35);
+    -moz-tap-highlight-color: rgba($brand_primary, .35);
+}
+
+button {
+    outline: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    color: inherit;
+    background: 0 0;
+    cursor: pointer;
+    text-align: center;
+    @include transition(all .6s ease-in-out);
+
+    &:focus, &:visited {
+        outline: none;
+    }
+}
+
+.btn {
+    border-radius: 15px;
+    padding: 1em 2em;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: transparent;
+    color: $color_white;
+    fill: $color_white;
+    text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 100%;
+    box-shadow: 0px 0px 0px transparent;
+    @include transition(all .6s ease-in-out);
+    text-decoration: none !important;
+    will-change: background-color, color;
+    
+    + [class *="btn"], + [class *="Btn"] {
+        margin-left: 1.5em;
+    }
+
+    > * + * {
+        margin-left: 10px;
+    }
+
+    @include MQ(M) {
+        min-width: 100px;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none !important;
+
+        .no-touch & {
+            outline: none;
+        }
+    }
+
+    &[disabled], &.disabled {
+        pointer-events:none;
+        color: $color_white;
+        background-color: $border_grey_dark;
+    }
+}
+
+.btn-primary {
+    background-color: $brand_primary;
+    color: $brand_gray;
+    fill: $brand_gray;
+
+    &:hover,
+    &:focus {
+        background-color: $brand_black;
+        color: $color_white;
+    }
+}
+
+.btn-secondary {
+    background-color: $brand_accent;
+    color: $brand_black;
+    fill: $brand_black;
+
+    &:hover,
+    &:focus {
+        background-color: $brand_black;
+        color: $color_white;
+    }
+}
+
+.btn-default {
+    background-color: transparent;
+    color: inherit;
+    fill: inherit;
+
+    &:hover,
+    &:focus {
+        background-color: $brand_gray;
+        color: $brand_primary;
+        fill: $brand_primary;
+    }
+}
+
+.btn-sm.btn,
+.btn-group-sm>.btn {
+    font-size: 12px;
+}
+
+.btn-lg.btn,
+.btn-group-lg>.btn {
+    font-size: 18px;
+}
+
+.btn-link {
+    cursor: pointer;
+    font-size: 1em;
+    display: inline-block;
+    text-decoration: underline;
+    color: $brand_primary;
+        
+    &:hover,
+    &:focus {
+        color: inherit;
+        text-decoration: none;
+    }
+    
+    &:active, &[disabled] {
+        color: $color_grey_dark;
+        outline: none;
+    }
+}
+
+.dialogDismiss {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    display: flex;
+    z-index: 1000;
+}
+
+.close_dialog {
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        width: 2px;
+        background: $border_grey_dark;
+        height: 14px;
+        top: 50%;
+        left: 50%;
+        margin: -7px 0 0 -1px;
+    }
+    &::before {
+        @include transform(rotate(-45deg));
+    }
+    &::after {
+        @include transform(rotate(45deg));
+    }
+    &:hover,
+    &:focus {
+        background-color: $brand_gray;
+        &::before,
+        &::after {
+            background-color: $color_text;
+        }
+    }
+}

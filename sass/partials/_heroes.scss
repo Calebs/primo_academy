@@ -1,0 +1,60 @@
+%hero_background {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    @include MQ(M) {
+        min-height: 450px;
+        max-height: 1200px;
+    }
+}
+
+.hero_area {
+    @extend %hero_background;
+    padding: 4rem 0 7rem;
+    
+    .container {
+        z-index: 10;
+    }
+
+    @include MQ(M) {
+        padding-bottom: 11rem;
+    }
+}
+
+.home_hero {
+    background-color: $brand_black;
+    background-image: url(../img/banners/hero_bg.jpg);
+}
+
+.heroContentWrapper {
+    z-index: 10;
+    width: 100%;
+    position: relative;
+    overflow: hidden; 
+    padding: 50px 0;
+}
+
+.hero_title {
+    font-size: 38px;
+    @include break-inside(avoid);
+    
+    @include MQ(M) {
+        font-size: 48px;
+    }
+}
+
+.hero_blub {
+    font-weight: 400;
+    font-size: 16px;
+    color: inherit;
+
+    @include MQ(M) {
+        font-size: 21px;
+    }
+}

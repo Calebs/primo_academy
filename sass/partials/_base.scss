@@ -1,0 +1,277 @@
+// antialiasing mode font rendering
+html * {
+    @include font-smoothing;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+
+mark {
+    padding: 5px 8.5px;
+    border-radius: 5px;
+}
+
+figure {
+    margin: 0;
+}
+
+body {
+    font-family: $body_font;
+    font-size: 1.6rem;
+    font-size: 16px;
+    word-spacing: -.01em;
+    letter-spacing: .01em;
+    color: $color_text;
+    width: 100%;
+    font-weight: 400;
+    position: relative;
+    line-height: 1.65;
+    background-color: white;
+    
+    &.scroll_lock {
+        overflow: hidden;
+    }
+}
+
+/* Backgrounds */
+
+.bg__white {
+    background-color: white !important;
+}
+
+.bg__off_white {
+    background-color: $color_white !important;
+}
+
+.bg__primary {
+    background-color: $brand_primary !important;
+}
+
+.bg__secondary {
+    background-color: $brand_accent !important;
+}
+
+.bg__primary_inverse {
+    background-color: $border_grey !important;
+}
+
+.color__primary {
+    color: $brand_primary !important;
+}
+
+.color__secondary {
+    color: $brand_accent !important;
+}
+
+.color__black {
+    color: $brand_black !important;
+}
+
+.color__grey_dark {
+    color: $color_grey_dark !important;
+}
+
+.color__grey {
+    color: $brand_gray !important;
+    
+}
+
+.color__white {
+    color: white !important;
+}
+
+.text__color_darker {
+    color: $color_text_darker !important;
+}
+
+.font-sm {
+    font-size: 13px !important;
+}
+
+.font-default {
+    font-size: 16px !important;
+}
+
+.font-md {
+    font-size: 21px !important;
+}
+
+.font-lg {
+    font-size: 32px !important;
+
+    @include MQ(M) {
+        font-size: 48px !important;
+    }
+}
+
+.font-heavy {
+    font-weight: 900;
+    letter-spacing: 0.04em;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.text_italics {
+    font-style: italic;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text_clipped {
+    @include text_truncate();
+}
+
+.caps_upper {
+    text-transform: uppercase !important;
+}
+
+.caps_normal {
+    text-transform: none !important;
+}
+
+.container {
+    width: auto;
+    position: relative;
+    max-width: 1170px;
+}
+
+.centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@include MQ-MAX(M) {
+    .hidden-sm {
+        display: none !important;
+    }
+
+    .text-center-sm {
+        text-align: center !important;
+    }
+}
+
+@include MQ(M) {
+    .visible_sm {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+    }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 21px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    margin: 0;
+    @include break-inside(avoid);
+        
+    +p {
+        padding-top: .5em;
+    }
+}
+
+address, address span {
+    display: block;
+}
+
+.margin_top_sm {
+    margin-top: 10px !important;
+}
+
+.margin_top_md {
+    margin-top: 20px !important;
+}
+
+.margin_bottom_lg {
+    margin-bottom: 30px !important;
+}
+
+.margin_bottom_xl {
+    margin-bottom: 50px !important;
+}
+
+.margin_bottom_sm {
+    margin-bottom: 10px !important;
+}
+
+.margin_bottom_md {
+    margin-bottom: 20px !important;
+}
+
+.margin_top_lg {
+    margin-top: 30px !important;
+}
+
+.margin_top_xl {
+    margin-top: 50px !important;
+}
+
+.no_margin {
+    margin: 0 !important;
+}
+
+.padding-top-none {
+    padding-top: 0 !important;
+}

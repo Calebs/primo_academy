@@ -1,0 +1,217 @@
+.dropdown-menu {
+    font-size: 1em;
+    box-sizing: border-box;
+    visibility: hidden;
+    z-index: 1000;
+    max-width: 460px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 5px;
+    color: $color_grey_dark;
+    background-color: white;
+    box-shadow: 0 0 0 1px rgba(black,0.1), 0 3px 10px 0 rgba(black,0.2);
+    @include transition(all .6s ease-in-out);
+    -webkit-animation: panel-slide-down .6s ease-in-out forwards;
+    animation: panel-slide-down .6s ease-in-out forwards;
+    overflow: hidden;
+    border: none;
+    
+    &.show {
+        visibility: visible;
+    }
+
+    li {
+        display: block;
+        padding: 0;
+        margin:0;
+
+        > *, > a {
+            padding: 10px 15px;
+            display: flex;
+            width: 100%;
+            font-size: 14px;
+            color: $color_text;
+            text-transform: capitalize;
+            line-height: normal;
+            align-items: center;
+            white-space: nowrap;
+
+            &:hover {
+                background: $brand_gray;
+                color: $brand_black;
+            }
+        }
+
+        .cust_icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+@keyframes panel-slide-down{
+    0%,30% { 
+        margin-top:-15px;
+        opacity:0
+    }
+    to {
+        margin-top:0;
+        opacity:1
+    }
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.tooltip .arrow::before {
+    border-top-color: $brand_black !important;
+}
+
+.tooltip-inner {
+    font-size: 12px;
+    background-color: $brand_black;
+    border-radius: 5px;
+    padding: 6px 12px;
+}
+
+.modal-backdrop {
+    background-color: black;
+    display: none;
+}
+
+.modal-content {
+    border-radius: 15px;
+}
+
+.modal-dialog {
+    z-index: 2000;
+    max-width: 520px;
+
+    @include MQ-MAX(M) {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+}
+
+.modal {
+    z-index: 3000;
+
+    .modal-open & {
+        background-color: rgba(black, .95);
+        padding: none !important;
+    }
+
+    .modal-header {
+        border-bottom: none;
+        padding: 20px 15px 0;
+        justify-content: flex-start;
+
+        @include MQ(M) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 30px 15px;
+
+        @include MQ(M) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+    
+    .subtitle {
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .content-panel {
+        min-height: 250px;
+    }
+
+    .modal-footer {
+        border-top: none;
+        padding: 0 15px 10px;
+    }
+}
+
+.modal-title {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: $header_font;
+    text-transform: uppercase;
+}
+
+.course_panel {
+    display: block;
+    padding: 10px 15px 0;
+    background-color: white;
+    border: 1px solid $border_grey;
+    border-radius: 15px;
+
+    @include MQ(M) {
+        padding: 15px 30px 0;
+    }
+
+    + .course_panel {
+        margin-top: 15px;
+    }
+}
+
+.panel-header {
+    padding-bottom: 15px;
+}
+
+.panel-body {
+    padding: 20px 0;
+    border-top: 1px solid $border_grey;
+}
+
+.accordion-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.4;
+    font-size: 18px;
+    @include transition(.4s all ease-in-out 0s);
+
+    @include MQ(M) {
+        font-size: 24px;
+    }
+
+    &::after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background-size: 65%;
+        background-color: $border_grey;
+        border-radius: 15px;
+        flex-shrink: 0;
+        margin-left: 10px;
+        background-repeat: no-repeat;
+        @include transition(.4s transform ease-in-out 0s);
+        background-image: url(../img/icons/chevron-down.svg);
+        @include transform(rotate(-90deg));
+        background-position: center;
+    }
+
+    &.collapsed::after {
+        @include transform(rotate(0deg));
+    }
+
+    &:hover, &:focus {
+        opacity: .75;
+    }
+}
+
+.course_title {
+    display: inline-flex;
+
+    > * + * {
+        margin-left: 10px;
+    }
+}
